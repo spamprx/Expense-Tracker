@@ -6,10 +6,12 @@
 
 * {
   box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body {
   background-color: #f7f7f7;
+  color: #333;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,17 +19,23 @@ body {
   min-height: 100vh;
   margin: 0;
   font-family: 'Lato', sans-serif;
-  font-size: 18px;
+  font-size: 16px;
+  padding: 20px;
 }
 
 .container {
   margin: 30px auto;
-  width: 400px;
+  width: 550px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: var(--box-shadow);
 }
 
 h1 {
   letter-spacing: 1px;
-  margin: 0;
+  margin: 0 0 20px 0;
+  text-align: center;
 }
 
 h3 {
@@ -48,6 +56,7 @@ h4 {
   display: flex;
   justify-content: space-between;
   margin: 20px 0;
+  border-radius: 8px;
 }
 
 .inc-exp-container > div {
@@ -63,6 +72,7 @@ h4 {
   font-size: 20px;
   letter-spacing: 1px;
   margin: 5px 0;
+  font-weight: bold;
 }
 
 .money.plus {
@@ -81,11 +91,12 @@ label {
 input[type='text'],
 input[type='number'] {
   border: 1px solid #dedede;
-  border-radius: 2px;
+  border-radius: 5px;
   display: block;
   font-size: 16px;
   padding: 10px;
   width: 100%;
+  margin-bottom: 15px;
 }
 
 .btn {
@@ -96,14 +107,21 @@ input[type='number'] {
   border: 0;
   display: block;
   font-size: 16px;
-  margin: 10px 0 30px;
+  margin: 30px 0;
   padding: 10px;
   width: 100%;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
 .btn:focus,
 .delete-btn:focus {
   outline: 0;
+}
+
+.btn:hover {
+  background-color: #8a74ff;
 }
 
 .list {
@@ -121,6 +139,7 @@ input[type='number'] {
   position: relative;
   padding: 10px;
   margin: 10px 0;
+  border-radius: 5px;
 }
 
 .list li.plus {
@@ -145,8 +164,60 @@ input[type='number'] {
   transform: translate(-100%, -50%);
   opacity: 0;
   transition: opacity 0.3s ease;
+  border-radius: 3px;
 }
 
 .list li:hover .delete-btn {
   opacity: 1;
+}
+
+/* Dark theme styles */
+body.dark-theme {
+  background-color: #1a1a1a;
+  color: #f7f7f7;
+}
+
+.dark-theme .container {
+  background-color: #2a2a2a;
+}
+
+.dark-theme .inc-exp-container,
+.dark-theme .list li {
+  background-color: #3a3a3a;
+  color: #f7f7f7;
+}
+
+.dark-theme input[type='text'],
+.dark-theme input[type='number'] {
+  background-color: #444;
+  color: #f7f7f7;
+  border-color: #555;
+}
+
+/* Theme toggle button styles */
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #9c88ff;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background-color: #7c68df;
+}
+
+.dark-theme .theme-toggle {
+  background-color: #f7f7f7;
+  color: #1a1a1a;
+}
+
+.dark-theme .theme-toggle:hover {
+  background-color: #e0e0e0;
 }
