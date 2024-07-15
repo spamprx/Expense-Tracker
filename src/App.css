@@ -222,3 +222,76 @@ body.dark-theme {
   background-color: #e0e0e0;
 }
 
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    margin: 15px auto;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .inc-exp-container {
+    flex-direction: column;
+  }
+
+  .inc-exp-container > div:first-of-type {
+    border-right: none;
+    border-bottom: 1px solid #dedede;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+  }
+
+  .money {
+    font-size: 18px;
+  }
+
+  .list li {
+    padding: 10px 5px;
+  }
+
+  .delete-btn {
+    opacity: 1;
+    position: static;
+    transform: none;
+    margin-left: 10px;
+  }
+
+  .theme-toggle {
+    top: 10px;
+    right: 10px;
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  input[type='text'],
+  input[type='number'] {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
