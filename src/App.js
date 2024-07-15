@@ -12,7 +12,7 @@ import './App.css';
 function App() {
   const [isDarkTheme, setIsDarkTheme] = useState(() => {
     const savedTheme = localStorage.getItem('theme');
-    return savedTheme === 'dark';
+    return savedTheme === null ? true : savedTheme === 'dark';
   });
 
   useEffect(() => {
@@ -27,7 +27,7 @@ function App() {
   const toggleTheme = () => {
     setIsDarkTheme(!isDarkTheme);
   };
-
+  
   return (
     <GlobalProvider>
       <div className={isDarkTheme ? 'dark-theme' : ''}>
